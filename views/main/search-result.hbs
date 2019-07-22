@@ -1,0 +1,23 @@
+<div class="container" style="margin-top: 40px;">
+    {{#if data}}
+    <h3>Results for {{query}}</h3>
+    <div class="row">
+        {{#each data}}
+        <div class="col-md-4">
+            <a href="/product/{{this._source._id}}">
+                <div class="thumbnail">
+                    <img src="{{this._source.image}}" class="img-fluid" alt="">
+                    <div class="caption">
+                        <h3>{{this._source.name}}</h3>
+                        <p>{{this._source.category.name}}</p>
+                        <p>{{this._source.price}}</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        {{/each}}
+    </div>
+    {{else}}
+    <h3>Search Not Found</h3>
+    {{/if}}
+</div>
