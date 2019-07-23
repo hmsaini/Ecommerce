@@ -236,7 +236,7 @@ router.post('/payment', (req, res, next) => {
             }
           }, function (err, updated) {
             if (updated) {
-              res.redirect('/user/profile');
+              res.redirect('/users/profile');
             }
           });
         }
